@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Tooltip } from "react-tooltip";
 import gsap from "gsap";
 import { dockApps } from "#constants";
@@ -8,6 +8,21 @@ import useWindowStore from "#store/window.js";
 const Dock = () => {
   const { openWindow, closeWindow, windows } = useWindowStore();
   const dockRef = useRef(null);
+
+  // Responzivní počet ikon
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const displayedApps = isMobile ? dockApps.slice(0, 4) : dockApps;
+
+  // GSAP efekt
   useGSAP(() => {
     const dock = dockRef.current;
     if (!dock) return;
@@ -28,36 +43,40 @@ const Dock = () => {
         });
       });
     };
+
     const handleMouseMove = (e) => {
       const { left } = dock.getBoundingClientRect();
       animateIcons(e.clientX - left);
     };
+
     const resetIcons = () =>
       icons.forEach((icon) =>
         gsap.to(icon, { scale: 1, y: 0, duration: 0.3, ease: "power1.out" })
       );
+
     dock.addEventListener("mousemove", handleMouseMove);
     dock.addEventListener("mouseleave", resetIcons);
+
     return () => {
       dock.removeEventListener("mousemove", handleMouseMove);
       dock.removeEventListener("mouseleave", resetIcons);
     };
-  }, []);
+  }, [displayedApps.length]);
+
   const toggleApp = (app) => {
-    // Implement Open Window Logic
-    if(!app.canOpen)return;
+    if (!app.canOpen) return;
     const window = windows[app.id];
-    if(window.isOpen){
+    if (window.isOpen) {
       closeWindow(app.id);
     } else {
       openWindow(app.id);
     }
-    console.log(windows);
   };
+
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container">
-        {dockApps.map(({ id, name, icon, canOpen }) => (
+        {displayedApps.map(({ id, name, icon, canOpen }) => (
           <div key={id} className="relative flex justify-center">
             <button
               type="button"
@@ -68,7 +87,6 @@ const Dock = () => {
               data-tooltip-delay-show={150}
               disabled={!canOpen}
               onClick={() => toggleApp({ id, name, icon, canOpen })}
-
             >
               <img
                 src={`/images/${icon}`}
