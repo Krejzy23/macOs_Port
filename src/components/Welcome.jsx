@@ -80,9 +80,9 @@ const Welcome = () => {
       <h1 ref={titleRef} className="mt-7">
         {renderText("portfolio", "text-9xl italic font-georama", 400)}
       </h1>
-      <div className="small-screen">
+      {/* <div className="small-screen">
         <p>This project review is designed for desktop/tabled screens only!</p>
-      </div>
+      </div> */}
     </section>
   );
 };
