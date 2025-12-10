@@ -2,19 +2,23 @@ import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { locations } from "#constants";
 
-const DEFAULT_LOCATION = location.work;
+const DEFAULT_LOCATION = locations.work;
 
 const useLocationStore = create(
   immer((set) => ({
-    activeLocation: locations.work,
+    activeLocation: DEFAULT_LOCATION,
 
-    setActiveLocation: (location = null) =>
+    setActiveLocation: (location) =>
       set((state) => {
+        // Ochrana proti undefined i null
+        if (location == null) return;
         state.activeLocation = location;
       }),
-    resetActiveLocation: () => {
-      state.activeLocation = DEFAULT_LOCATION;
-    },
+
+    resetActiveLocation: () =>
+      set((state) => {
+        state.activeLocation = DEFAULT_LOCATION;
+      }),
   }))
 );
 
