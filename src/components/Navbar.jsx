@@ -2,14 +2,33 @@ import dayjs from "dayjs";
 import { navIcons, navLinks } from "#constants";
 import useWindowStore from "#store/window";
 import { BatteryFull } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
-  const { openWindow } = useWindowStore();
+  const { openWindow, windows } = useWindowStore();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile
+  useEffect(() => {
+    const mql = window.matchMedia("(max-width: 768px)");
+    const update = () => setIsMobile(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  // Check if any window is open
+  const isAnyWindowOpen = Object.values(windows).some(win => win.isOpen);
+  
+  // Dynamic background: white if mobile AND window is open
+  const bgClass = isMobile && isAnyWindowOpen 
+    ? "bg-white backdrop-blur-lg" 
+    : "bg-transparent backdrop-blur-lg md:bg-white md:backdrop-blur-none";
 
   return (
-    <nav className="top-0 left-0 w-full z-50 bg-transparent backdrop-blur-lg md:bg-white md:backdrop-blur-none px-4 py-2 flex justify-between items-center relative">
+    <nav className={`fixed top-0 left-0 w-full z-100 ${bgClass} px-4 py-2 flex justify-between items-center`}>
       {/* MOBILE TOP BAR */}
-      <section className="flex items-center justify-between sm:hidden w-full mb-2 z-1000">
+      <section className="flex items-center justify-between sm:hidden w-full mb-2">
         {/* LEFT — TIME */}
         <time className="font-medium text-lg flex items-start whitespace-nowrap">
           <span className="mr-1">{dayjs().format("h:mm")}</span>

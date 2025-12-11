@@ -70,11 +70,11 @@ const WindowWrapper = (Component, windowKey, options = {}) => {
       ref.current.style.display = isOpen ? "block" : "none";
     }, [isOpen]);
 
-    // === Dynamic class ===
+    // === Dynamic class - fullscreen minus navbar height ===
     const className = [
       "transition-all",
       isMobile && fullscreenOnMobile
-        ? "fixed inset-0 w-screen h-screen z-50"
+        ? "fixed top-14 left-0 right-0 bottom-0 w-screen z-50" // Start below navbar
         : "absolute"
     ].join(" ");
 
