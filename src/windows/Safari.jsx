@@ -64,6 +64,8 @@ const Safari = () => {
   );
 };
 
-const SafariWindow = WindowWrapper(Safari, "safari");
+const SafariWindow = WindowWrapper(Safari, "safari" ,{
+  fullscreenOnMobile: true,
+});
 
 export default SafariWindow;
