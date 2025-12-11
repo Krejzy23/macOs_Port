@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="top-0 left-0 w-full z-50 bg-transparent backdrop-blur-lg md:bg-white md:backdrop-blur-none px-4 py-2 flex justify-between items-center relative">
       {/* MOBILE TOP BAR */}
-      <section className="flex items-center justify-between sm:hidden w-full mb-2">
+      <section className="flex items-center justify-between sm:hidden w-full mb-2 z-1000">
         {/* LEFT — TIME */}
         <time className="font-medium text-lg flex items-start whitespace-nowrap">
           <span className="mr-1">{dayjs().format("h:mm")}</span>

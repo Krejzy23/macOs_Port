@@ -23,6 +23,22 @@ const WindowWrapper = (Component, windowKey, options = {}) => {
       return () => mql.removeEventListener("change", update);
     }, []);
 
+    useEffect(() => {
+      const isMobile = window.innerWidth < 768;
+    
+      if (isMobile && props.fullscreenOnMobile) {
+        updateWindow(target, {
+          x: 0,
+          y: 0,
+          width: window.innerWidth,
+          height: window.innerHeight,
+          draggable: false,
+          resizable: false,
+          fullscreen: true,
+        });
+      }
+    }, []);
+
     // === Animate open ===
     useGSAP(() => {
       const el = ref.current;
