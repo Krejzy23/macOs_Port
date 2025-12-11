@@ -26,7 +26,7 @@ const WindowHeader = ({ target, title }) => {
           <span className="text-sm font-semibold text-blue-500">Go Back</span>
         </button>
 
-        <h2 className="font-semibold mx-auto">{title}</h2>
+        <h2 className="flex font-semibold justify-center items-center">{title}</h2>
       </div>
     </>
   );

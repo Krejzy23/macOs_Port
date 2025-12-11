@@ -12,6 +12,7 @@ import {
   Plus,
   Copy,
   MoveRight,
+  MicIcon,
 } from "lucide-react";
 
 const Safari = () => {
@@ -70,27 +71,28 @@ const Safari = () => {
       </div>
 
       {/* MOBILE BOTTOM BAR - iPhone style */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-gray-100 border-t rounded-t-xl border-gray-200 z-50">
         {/* Search bar */}
-        <div className="flex items-center gap-3 px-4 py-2 border-b border-gray-100">
-          <ShieldHalf size={18} className="text-gray-600" />
-          <div className="flex-1 bg-gray-100 rounded-lg px-3 py-2 flex items-center gap-2">
-            <Search size={16} className="text-gray-400" />
+        <div className="flex mt-5 items-center gap-3 px-6 py-2  border-gray-100">
+          {/* <ShieldHalf size={18} className="text-gray-600" /> */}
+          <div className="flex-1 bg-white rounded-lg px-3 py-2 flex items-center gap-2 border border-gray-200">
+            <Search size={16} className="text-black" />
             <input
               type="text"
               placeholder="Search or enter website name"
-              className="flex-1 bg-transparent text-sm outline-none"
+              className="flex-1 bg-transparent text-md outline-none"
             />
+            <MicIcon size={16} className="text-black" />
           </div>
         </div>
         
         {/* Navigation controls */}
-        <div className="flex items-center justify-around px-4 py-3">
-          <ChevronLeft size={24} className="text-blue-500" />
-          <ChevronRight size={24} className="text-blue-500" />
-          <Share size={22} className="text-blue-500" />
-          <Copy size={22} className="text-blue-500" />
-          <Plus size={22} className="text-blue-500" />
+        <div className="flex items-center justify-around py-5">
+          <ChevronLeft size={24} className="text-gray-400" />
+          <ChevronRight size={24} className="text-gray-400" />
+          <Share size={24} className="text-blue-500" />
+          <Copy size={24} className="text-blue-500" />
+          <Plus size={24} className="text-blue-500" />
         </div>
       </div>
     </>
