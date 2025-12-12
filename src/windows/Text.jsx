@@ -1,5 +1,5 @@
 import WindowWrapper from "#hoc/WindowWrapper";
-import { WindowControls } from "#components";
+import { WindowControls, WindowHeader } from "#components";
 import useWindowStore from "#store/window";
 
 const Text = () => {
@@ -7,13 +7,22 @@ const Text = () => {
   const data = windows.txtfile?.data;
   if (!data) return null;
   const { name, image, subtitle, description } = data;
+  
   return (
     <>
-      <div id="window-header">
+      {/* MOBILE HEADER */}
+      <div className="md:hidden">
+        <WindowHeader target="txtfile" title={name} />
+      </div>
+
+      {/* DESKTOP HEADER */}
+      <div id="window-header" className="hidden md:flex">
         <WindowControls target="txtfile" />
         <h2>{name}</h2>
       </div>
-      <div className="p-5 space-y-6 bg-white">
+
+      {/* CONTENT */}
+      <div className="p-5 space-y-6 bg-white overflow-y-auto">
         {image ? (
           <div className="w-full">
             <img src={image} alt={name} className="w-full h-auto rounded" />
@@ -26,16 +35,18 @@ const Text = () => {
 
         {Array.isArray(description) && description.length > 0 ? (
           <div className="space-y-3 leading-relaxed text-base text-gray-800">
-            {description.map((para,idx) =>(
-                <p key={idx}>{para}</p>
+            {description.map((para, idx) => (
+              <p key={idx}>{para}</p>
             ))}
           </div>
-        ): null}
+        ) : null}
       </div>
     </>
   );
 };
 
-const TextWindow = WindowWrapper(Text, "txtfile")
+const TextWindow = WindowWrapper(Text, "txtfile", {
+  fullscreenOnMobile: true,
+});
 
 export default TextWindow;

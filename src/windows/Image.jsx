@@ -1,7 +1,7 @@
 import { WindowControls } from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";
 import useWindowStore from "#store/window";
-
+import { WindowHeader } from "#components";
 
 const ImageWindowContent = () => {
   const { windows } = useWindowStore();
@@ -13,25 +13,33 @@ const ImageWindowContent = () => {
 
   return (
     <>
-      <div id="window-header">
+      {/* MOBILE HEADER */}
+      <div className="md:hidden">
+        <WindowHeader target="imgfile" title={name} />
+      </div>
+
+      {/* DESKTOP HEADER */}
+      <div id="window-header" className="hidden md:flex">
         <WindowControls target="imgfile" />
         <h2>{name}</h2>
       </div>
 
-      <div className="p-5 bg-white">
+      {/* IMAGE CONTENT */}
+      <div className="p-5 bg-white flex items-center justify-center min-h-0 flex-1">
         {imageUrl ? (
-          <div className="w-full">
-            <img
-              src={imageUrl}
-              alt={name}
-              className="max-w-[50vh] h-auto max-h-[50vh] object-contain rounded"
-            />
-          </div>
+          <img
+            src={imageUrl}
+            alt={name}
+            className="max-w-full max-h-full w-auto h-auto object-contain rounded"
+          />
         ) : null}
       </div>
     </>
   );
 };
 
-const ImageWindow = WindowWrapper(ImageWindowContent, "imgfile");
+const ImageWindow = WindowWrapper(ImageWindowContent, "imgfile", {
+  fullscreenOnMobile: true,
+});
+
 export default ImageWindow;

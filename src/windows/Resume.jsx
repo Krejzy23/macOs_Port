@@ -32,5 +32,7 @@ const Resume = () => {
     </>
   );
 };
-const ResumeWindow = WindowWrapper(Resume, "resume");
+const ResumeWindow = WindowWrapper(Resume, "resume", {
+    fullscreenOnMobile: true,
+});
 export default ResumeWindow;

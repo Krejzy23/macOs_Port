@@ -204,6 +204,23 @@ const gallery = [
   },
 ];
 
+const mobileQuickAccess = [
+  {
+    id: "terminal",
+    name: "Tech Stack",
+    icon: "/images/terminal.png",
+    windowKey: "terminal",
+    windowPosition: "top-[5vh] left-5",
+  },
+  {
+    id: "resume",
+    name: "Resume",
+    icon: "/images/pages.png",
+    windowKey: "resume",
+    windowPosition:"top-[5vh] left-30"
+  }
+];
+
 export {
   navLinks,
   navIcons,
@@ -213,6 +230,7 @@ export {
   socials,
   photosLinks,
   gallery,
+  mobileQuickAccess,
 };
 
 const WORK_LOCATION = {

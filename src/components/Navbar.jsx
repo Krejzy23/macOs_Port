@@ -18,15 +18,18 @@ const Navbar = () => {
   }, []);
 
   // Check if any window is open
-  const isAnyWindowOpen = Object.values(windows).some(win => win.isOpen);
-  
+  const isAnyWindowOpen = Object.values(windows).some((win) => win.isOpen);
+
   // Dynamic background: white if mobile AND window is open
-  const bgClass = isMobile && isAnyWindowOpen 
-    ? "bg-white backdrop-blur-lg" 
-    : "bg-transparent backdrop-blur-lg md:bg-white md:backdrop-blur-none";
+  const bgClass =
+    isMobile && isAnyWindowOpen
+      ? "bg-white backdrop-blur-lg"
+      : "bg-transparent backdrop-blur-lg md:bg-white md:backdrop-blur-none";
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-100 ${bgClass} px-4 py-2 flex justify-between items-center`}>
+    <nav
+      className={`fixed top-0 left-0 w-full z-100 ${bgClass} px-4 py-2 flex justify-between items-center`}
+    >
       {/* MOBILE TOP BAR */}
       <section className="flex items-center justify-between sm:hidden w-full mb-2">
         {/* LEFT — TIME */}
@@ -37,17 +40,12 @@ const Navbar = () => {
 
         {/* CENTER — PILL */}
         <div className="flex grow items-center justify-center px-3">
-          <div className="bg-black/70 backdrop-blur-md rounded-full w-full h-10">
-            
+          <div className="bg-black/70 backdrop-blur-md rounded-full w-full h-10"></div>
+          <div className="flex justify-end items-center gap-3 w-20">
+            <img src="/icons/wifi.svg" className="h-4 opacity-90" />
+            <BatteryFull size={24} strokeWidth={2} />
           </div>
-        <div className="flex justify-end items-center gap-3 w-20">
-          <img src="/icons/wifi.svg" className="h-4 opacity-90" />
-          <BatteryFull size={24} strokeWidth={2} />
         </div>
-
-        </div>
-
-        {/* RIGHT — ICONS */}
       </section>
 
       {/* DESKTOP LEFT SIDE */}
