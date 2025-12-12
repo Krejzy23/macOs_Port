@@ -1,7 +1,8 @@
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
-import { WindowControls } from "#components";
+import { WindowControls, WindowHeader } from "#components";
 import { Download } from "lucide-react";
 import { Document, Page, pdfjs } from "react-pdf";
+import { useState, useEffect } from "react";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
@@ -12,9 +13,30 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 ).toString();
 
 const Resume = () => {
+  const [pageWidth, setPageWidth] = useState(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      // Na mobilu použij šířku okna - padding, na desktopu nech default
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        setPageWidth(window.innerWidth - 40); // minus padding
+      } else {
+        setPageWidth(600); // desktop default
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+
   return (
     <>
-      <div id="window-header">
+      <div className="md:hidden">
+        <WindowHeader target="resume" title="Resume" />
+      </div>
+      <div id="window-header" className="hidden md:flex">
         <WindowControls target="resume" />
         <h2>Resume.pdf</h2>
         <a
@@ -26,13 +48,22 @@ const Resume = () => {
           <Download className="icon" />
         </a>
       </div>
-      <Document file="files/resume.pdf">
-        <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
-      </Document>
+      <div className="overflow-auto p-5 bg-white flex justify-center">
+        <Document file="files/resume.pdf" className="max-w-full">
+          <Page 
+            pageNumber={1} 
+            renderTextLayer 
+            renderAnnotationLayer
+            width={pageWidth}
+          />
+        </Document>
+      </div>
     </>
   );
 };
+
 const ResumeWindow = WindowWrapper(Resume, "resume", {
-    fullscreenOnMobile: true,
+  fullscreenOnMobile: true,
 });
+
 export default ResumeWindow;

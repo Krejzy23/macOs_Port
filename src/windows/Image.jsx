@@ -1,7 +1,7 @@
-import { WindowControls } from "#components";
+import { WindowControls, WindowHeader } from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";
 import useWindowStore from "#store/window";
-import { WindowHeader } from "#components";
+
 
 const ImageWindowContent = () => {
   const { windows } = useWindowStore();
