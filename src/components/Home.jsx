@@ -51,7 +51,7 @@ const Home = () => {
       </ul>
 
       {/* MOBILE - Terminal & Resume */}
-      <ul className="mt-20 md:hidden">
+      <ul className="mt-14 md:hidden">
         {mobileQuickAccess.map((item) => (
           <li
             key={item.id}
