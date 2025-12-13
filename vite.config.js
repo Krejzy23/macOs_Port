@@ -18,7 +18,8 @@ export default defineConfig({
       "#constants": resolve(rootDir, "src/constants"),
       "#store": resolve(rootDir, "src/store"),
       "#hoc": resolve(rootDir, "src/hoc"),
-      "#windows": resolve(rootDir, "src/windows")
+      "#windows": resolve(rootDir, "src/windows"),
+      "#utils": resolve(rootDir, "src/utils")
     }
   }
 })

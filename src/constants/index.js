@@ -401,6 +401,7 @@ const WORK_LOCATION = {
   ],
 };
 
+
 const ABOUT_LOCATION = {
   id: 2,
   type: "about",

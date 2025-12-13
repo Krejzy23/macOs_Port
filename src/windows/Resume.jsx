@@ -18,7 +18,7 @@ const Resume = () => {
   useEffect(() => {
     const updateWidth = () => {
       // Na mobilu použij šířku okna - padding, na desktopu nech default
-      const isMobile = window.innerWidth < 768;
+      const isMobile = window.innerWidth < 768
       if (isMobile) {
         setPageWidth(window.innerWidth - 40); // minus padding
       } else {
@@ -33,7 +33,7 @@ const Resume = () => {
 
   return (
     <>
-      <div className="md:hidden">
+      <div className="md:hidden" >
         <WindowHeader target="resume" title="Resume" />
       </div>
       <div id="window-header" className="hidden md:flex">
@@ -48,8 +48,8 @@ const Resume = () => {
           <Download className="icon" />
         </a>
       </div>
-      <div className="overflow-auto p-5 bg-white flex justify-center">
-        <Document file="files/resume.pdf" className="max-w-full">
+      <div className="p-5 bg-white h-full flex justify-center">
+        <Document file="files/resume.pdf">
           <Page 
             pageNumber={1} 
             renderTextLayer 
