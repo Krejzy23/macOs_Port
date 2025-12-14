@@ -1,9 +1,9 @@
-import { gsap } from "gsap";
-import useWindowStore from "#store/window";
-import { useGSAP } from "@gsap/react";
 import { useRef, useEffect, useState } from "react";
-import { Draggable } from "gsap/Draggable";
 import clsx from "clsx";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Draggable } from "gsap/Draggable";
+import useWindowStore from "#store/window";
 import { WindowHeader } from "#components";
 
 const WindowWrapper = (Component, windowKey, options = {}) => {
@@ -50,10 +50,10 @@ const WindowWrapper = (Component, windowKey, options = {}) => {
         className={clsx(
           "bg-white rounded-xl shadow-2xl",
           isMobile && fullscreenOnMobile
-            ? "fixed inset-0 z-50 flex flex-col"
+            ? "fixed top-14 left-0 right-0 bottom-0 z-40 flex flex-col"
             : "absolute"
         )}
-        style={{ zIndex }}
+        style={!isMobile ? { zIndex } : undefined}
       >
         {/* 🔥 HEADER VŽDY TADY */}
         {isMobile && fullscreenOnMobile && (

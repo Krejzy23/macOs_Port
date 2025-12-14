@@ -22,13 +22,13 @@ const Navbar = () => {
 
   // Dynamic background: white if mobile AND window is open
   const bgClass =
-    isMobile && isAnyWindowOpen
-      ? "bg-white backdrop-blur-lg"
-      : "bg-transparent backdrop-blur-lg md:bg-white md:backdrop-blur-none";
+  isMobile && isAnyWindowOpen
+    ? "bg-white"
+    : "bg-transparent md:bg-white";
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-100 ${bgClass} px-4 py-2 flex justify-between items-center`}
+      className={`fixed top-0 left-0 w-full z-50 ${bgClass} px-4 py-2 flex justify-between items-center`}
     >
       {/* MOBILE TOP BAR */}
       <section className="flex items-center justify-between sm:hidden w-full mb-2">
