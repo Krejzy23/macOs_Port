@@ -1,4 +1,4 @@
-import { WindowControls, WindowHeader } from "#components";
+import { WindowControls } from "#components";
 import { techStack } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import { Check, Flag } from "lucide-react";
@@ -6,11 +6,6 @@ import { Check, Flag } from "lucide-react";
 const Terminal = () => {
   return (
     <>
-      {/* MOBILE HEADER */}
-      <div className="md:hidden">
-        <WindowHeader target="terminal" title="Tech Stack" />
-      </div>
-
       {/* DESKTOP HEADER */}
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="terminal"/>
@@ -18,7 +13,7 @@ const Terminal = () => {
       </div>
 
       {/* TERMINAL CONTENT */}
-      <div className="techstack overflow-y-auto">
+      <div className="flex-1 techstack overflow-y-auto">
         <p>
           <span className="font-bold">@Ales % </span>
           show tech stack
@@ -59,6 +54,7 @@ const Terminal = () => {
 
 const TerminalWindow = WindowWrapper(Terminal, "terminal", {
   fullscreenOnMobile: true,
+  title: "Tech Stack",
 });
 
 export default TerminalWindow;

@@ -1,4 +1,4 @@
-import { WindowControls, WindowHeader } from "#components";
+import { WindowControls } from "#components";
 import { Search, ChevronRight } from "lucide-react";
 import WindowWrapper from "#hoc/WindowWrapper";
 import { locations } from "#constants";
@@ -70,9 +70,8 @@ const Finder = () => {
   return (
     <>
       {/* MOBILE HEADER */}
-      <div className="md:hidden">
-        <WindowHeader target="finder" title="Finder" />
 
+      <div className="md:hidden">
         {/* Breadcrumb navigation */}
         <div className="flex items-center gap-1 px-4 py-2 bg-gray-50 border-b border-gray-200 overflow-x-auto text-sm">
           {breadcrumb.map((item, idx) => (
@@ -112,21 +111,21 @@ const Finder = () => {
         <ul
           className={clsx(
             "content",
-            isMobile ? "flex flex-row gap-8 p-8" : "relative"
+            isMobile ? "grid grid-cols-3 auto-rows-max content-start items-start" : "relative"
           )}
         >
           {activeLocation?.children?.map((item) => (
             <li
               key={item.id}
               className={clsx(
-                "flex flex-col items-center gap-2 cursor-pointer",
+                "flex flex-col items-center mt-5 gap-2 cursor-pointer",
                 isMobile ? "relative" : "absolute",
                 !isMobile && item.position
               )}
               onClick={() => openItem(item)}
             >
               <img
-                src={isMobile ? "/images/folder.png" : item.icon}
+                src={item.kind === "folder" ? "/images/folder.png" : item.icon}
                 alt={item.name}
                 className="w-16 h-16 object-contain"
               />
@@ -143,6 +142,7 @@ const Finder = () => {
 
 const FinderWindow = WindowWrapper(Finder, "finder", {
   fullscreenOnMobile: true,
+  title: "Portfolio"
 });
 
 export default FinderWindow;

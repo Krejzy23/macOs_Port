@@ -1,5 +1,5 @@
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
-import { WindowControls, WindowHeader } from "#components";
+import { WindowControls } from "#components";
 import { Download } from "lucide-react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { useState, useEffect } from "react";
@@ -18,7 +18,7 @@ const Resume = () => {
   useEffect(() => {
     const updateWidth = () => {
       // Na mobilu použij šířku okna - padding, na desktopu nech default
-      const isMobile = window.innerWidth < 768
+      const isMobile = window.innerWidth < 768;
       if (isMobile) {
         setPageWidth(window.innerWidth - 40); // minus padding
       } else {
@@ -33,9 +33,6 @@ const Resume = () => {
 
   return (
     <>
-      <div className="md:hidden" >
-        <WindowHeader target="resume" title="Resume" />
-      </div>
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="resume" />
         <h2>Resume.pdf</h2>
@@ -50,9 +47,9 @@ const Resume = () => {
       </div>
       <div className="p-5 bg-white h-full flex justify-center">
         <Document file="files/resume.pdf">
-          <Page 
-            pageNumber={1} 
-            renderTextLayer 
+          <Page
+            pageNumber={1}
+            renderTextLayer
             renderAnnotationLayer
             width={pageWidth}
           />
@@ -64,6 +61,7 @@ const Resume = () => {
 
 const ResumeWindow = WindowWrapper(Resume, "resume", {
   fullscreenOnMobile: true,
+  title: "Resume",
 });
 
 export default ResumeWindow;

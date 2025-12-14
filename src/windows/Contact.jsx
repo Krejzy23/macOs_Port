@@ -1,12 +1,14 @@
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import { socials } from "#constants";
-import WindowHeader from "#components/WindowHeader";
+import { WindowControls } from "#components";
 
 const Contact = () => {
   return (
     <>
       {/* === UNIVERSAL HEADER (mobile + desktop) === */}
-      <WindowHeader target="contact" title="Contact" />
+      <div id="window-header" className="hidden md:flex">
+        <WindowControls target="contact" />
+      </div>
 
       {/* === CONTENT === */}
       <div className="p-5 space-y-5">
@@ -54,6 +56,7 @@ const Contact = () => {
 
 const ContactWindow = WindowWrapper(Contact, "contact", {
   fullscreenOnMobile: true,
+  title: "Contact"
 });
 
 export default ContactWindow;

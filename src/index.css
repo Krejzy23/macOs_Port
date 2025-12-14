@@ -37,7 +37,7 @@ body {
   }
 
   nav {
-    @apply flex justify-between items-center bg-white/50 backdrop-blur-3xl p-2 px-5 select-none;
+    @apply flex justify-between items-center bg-white p-2 px-5 select-none z-100;
 
     div {
       @apply flex items-center max-sm:w-full max-sm:justify-center gap-5;
@@ -119,8 +119,8 @@ body {
   }
 
   #safari {
-    @apply w-4xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
+    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply md:absolute md:w-4xl md:top-40 md:left-2/12; 
     .search {
       @apply flex items-center gap-3 w-2/3 bg-white border border-gray-300 rounded-lg px-3 py-2;
 
@@ -163,10 +163,12 @@ body {
   }
 
   #terminal {
-    @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-visible;
+
+    @apply md:w-xl md:absolute md:top-32 md:left-1/12;
 
     h2 {
-      @apply font-bold text-sm text-center w-full;
+      @apply text-sm text-center;
     }
 
     .techstack {
@@ -209,10 +211,10 @@ body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
+    @apply  bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply md:absolute md:top-60 md:left-5/12 md:max-w-2xl;
     h2 {
-      @apply font-bold text-sm text-center w-full;
+      @apply text-sm text-center;
     }
 
     h3 {
@@ -297,9 +299,10 @@ body {
   }
 
   #resume {
-    @apply w-fit h-fit absolute top-16 left-7/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply md:absolute md:top-16 md:left-7/12 md:w-fit md:h-fit;
 
-    #window-header {
+    .window-header {
       h2 {
         @apply font-bold text-sm text-center flex-1;
       }
@@ -355,16 +358,18 @@ body {
   }
 
   #txtfile {
-    @apply w-md absolute top-36 right-32 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
+    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-visible;
+    @apply md:w-md md:top-40 md:right-32 ;
+    
     h2 {
-      @apply font-bold text-sm text-center w-full;
+      @apply font-georama text-lg text-center;
     }
   }
 
   #imgfile {
-    @apply w-xl absolute top-40 left-2/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
-
+    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+    @apply md:w-xl md:absolute md:top-40 md:left-2/12;
+    
     #window-header {
       p {
         @apply font-bold text-[#5f6266];

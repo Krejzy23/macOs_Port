@@ -1,7 +1,6 @@
 import { WindowControls } from "#components";
 import { blogPosts } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
-import { WindowHeader } from "#components";
 import {
   ChevronLeft,
   PanelLeft,
@@ -42,11 +41,6 @@ const Safari = () => {
           <Plus className="icon" />
           <Copy className="icon" />
         </div>
-      </div>
-
-      {/* MOBILE HEADER - only on mobile */}
-      <div className="md:hidden">
-        <WindowHeader target="safari" title="Safari" />
       </div>
 
       {/* BLOG CONTENT */}
@@ -101,6 +95,7 @@ const Safari = () => {
 
 const SafariWindow = WindowWrapper(Safari, "safari", {
   fullscreenOnMobile: true,
+  title: "Safari"
 });
 
 export default SafariWindow;

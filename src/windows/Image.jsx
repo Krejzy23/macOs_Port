@@ -13,11 +13,6 @@ const ImageWindowContent = () => {
 
   return (
     <>
-      {/* MOBILE HEADER */}
-      <div className="md:hidden">
-        <WindowHeader target="imgfile" title={name} />
-      </div>
-
       {/* DESKTOP HEADER */}
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="imgfile" />
@@ -40,6 +35,7 @@ const ImageWindowContent = () => {
 
 const ImageWindow = WindowWrapper(ImageWindowContent, "imgfile", {
   fullscreenOnMobile: true,
+  title: "Image"
 });
 
 export default ImageWindow;

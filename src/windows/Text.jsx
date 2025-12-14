@@ -1,5 +1,5 @@
 import WindowWrapper from "#hoc/WindowWrapper";
-import { WindowControls, WindowHeader } from "#components";
+import { WindowControls } from "#components";
 import useWindowStore from "#store/window";
 
 const Text = () => {
@@ -10,15 +10,9 @@ const Text = () => {
   
   return (
     <>
-      {/* MOBILE HEADER */}
-      <div className="md:hidden">
-        <WindowHeader target="txtfile" title={name} />
-      </div>
-
       {/* DESKTOP HEADER */}
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="txtfile" />
-        <h2>{name}</h2>
       </div>
 
       {/* CONTENT */}
@@ -47,6 +41,7 @@ const Text = () => {
 
 const TextWindow = WindowWrapper(Text, "txtfile", {
   fullscreenOnMobile: true,
+  title: "Text"
 });
 
 export default TextWindow;

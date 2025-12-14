@@ -1,11 +1,13 @@
 import { gsap } from "gsap";
 import useWindowStore from "#store/window";
 import { useGSAP } from "@gsap/react";
-import { useLayoutEffect, useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Draggable } from "gsap/Draggable";
+import clsx from "clsx";
+import { WindowHeader } from "#components";
 
 const WindowWrapper = (Component, windowKey, options = {}) => {
-  const { fullscreenOnMobile = false } = options;
+  const { fullscreenOnMobile = false, title } = options;
 
   const Wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
@@ -14,7 +16,6 @@ const WindowWrapper = (Component, windowKey, options = {}) => {
 
     const [isMobile, setIsMobile] = useState(false);
 
-    // === Detect mobile breakpoint ===
     useEffect(() => {
       const mql = window.matchMedia("(max-width: 768px)");
       const update = () => setIsMobile(mql.matches);
@@ -23,64 +24,46 @@ const WindowWrapper = (Component, windowKey, options = {}) => {
       return () => mql.removeEventListener("change", update);
     }, []);
 
-    useEffect(() => {
-      const isMobile = window.innerWidth < 768;
-    
-      if (isMobile && props.fullscreenOnMobile) {
-        updateWindow(target, {
-          x: 0,
-          y: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-          draggable: false,
-          resizable: false,
-          fullscreen: true,
-        });
-      }
-    }, []);
-
-    // === Animate open ===
     useGSAP(() => {
-      const el = ref.current;
-      if (!el || !isOpen) return;
-      el.style.display = "block";
-
+      if (!ref.current || !isOpen) return;
       gsap.fromTo(
-        el,
-        { scale: 0.8, opacity: 0, y: 40 },
-        { scale: 1, opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }
+        ref.current,
+        { scale: 0.9, opacity: 0, y: 40 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.25 }
       );
     }, [isOpen]);
 
-    // === Draggable only on desktop ===
     useGSAP(() => {
-      const el = ref.current;
-      if (!el || isMobile || !isOpen) return;
-
-      const [instance] = Draggable.create(el, {
+      if (!ref.current || isMobile || !isOpen) return;
+      const [drag] = Draggable.create(ref.current, {
         onPress: () => focusWindow(windowKey),
       });
-
-      return () => instance.kill();
+      return () => drag.kill();
     }, [isMobile, isOpen]);
 
-    // === Hide/show ===
-    useLayoutEffect(() => {
-      if (!ref.current) return;
-      ref.current.style.display = isOpen ? "block" : "none";
-    }, [isOpen]);
-
-    // === Dynamic class - fullscreen minus navbar height ===
-    const className = [
-      "transition-all",
-      isMobile && fullscreenOnMobile
-        ? "fixed top-14 left-0 right-0 bottom-0 w-screen z-50" // Start below navbar
-        : "absolute"
-    ].join(" ");
+    if (!isOpen) return null;
 
     return (
-      <section id={windowKey} ref={ref} className={className} style={{ zIndex }}>
-        <Component {...props} />
+      <section
+        ref={ref}
+        id={windowKey}
+        className={clsx(
+          "bg-white rounded-xl shadow-2xl",
+          isMobile && fullscreenOnMobile
+            ? "fixed inset-0 z-50 flex flex-col"
+            : "absolute"
+        )}
+        style={{ zIndex }}
+      >
+        {/* 🔥 HEADER VŽDY TADY */}
+        {isMobile && fullscreenOnMobile && (
+          <WindowHeader target={windowKey} title={title} />
+        )}
+
+        {/* CONTENT */}
+        <div className="flex-1 overflow-y-auto">
+          <Component {...props} />
+        </div>
       </section>
     );
   };
@@ -88,4 +71,4 @@ const WindowWrapper = (Component, windowKey, options = {}) => {
   return Wrapped;
 };
 
-export default WindowWrapper;
+export default WindowWrapper
