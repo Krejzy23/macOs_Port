@@ -221,6 +221,97 @@ const mobileQuickAccess = [
   }
 ];
 
+const system = [
+  {
+    id: "1",
+    version: "v1.0.0",
+    tech: "HTML + CSS",
+    description: [
+      "First contact with programming after a retraining course",
+      "Struggling with flexbox and mobile responsiveness 😀"
+    ],
+    date: "23.9.2023",
+    repo: "https://github.com/Krejzy23/Photographer_portfolio",
+    live: "https://photographer-portfolio-nine.vercel.app/",
+  },
+  {
+    id: "2",
+    version: "v1.5.0",
+    tech: "HTML + CSS + JavaScript",
+    description: [
+      "Simple website using jQuery and a form written in JavaScript",
+      "Started to feel like a real programmer — still fighting flexbox 😅"
+    ],
+    date: "10.11.2023",
+    repo: "https://github.com/Krejzy23/Barber_Portfolio",
+    live: "https://barber-portfolio.vercel.app/",
+  },
+  {
+    id: "3",
+    version: "v2.0.0",
+    tech: "React + Tailwind CSS + Framer Motion",
+    description: [
+      "Learning React fundamentals, dependencies, and basic UI/UX principles",
+      "Why did I waste time with vanilla coding? React is awesome! 🤩"
+    ],
+    date: "13.1.2024",
+    repo: "https://github.com/Krejzy23/KrejzyVerse",
+    live: "https://krejzy-verse.vercel.app/",
+  },
+  {
+    id: "4",
+    version: "v2.5.0",
+    tech: "Next.js + TypeScript + API",
+    description: [
+      "First experience with APIs, server-side rendering, and TypeScript",
+      "Understanding why types and data flow really matter"
+    ],
+    date: "14.2.2024",
+    repo: "https://github.com/Krejzy23/Anime_List",
+    live: "https://anime-list-beige.vercel.app/",
+  },
+  {
+    id: "5",
+    version: "v3.0.0",
+    tech: "Next.js + MongoDB + Clerk",
+    description: [
+      "First real full-stack application with database and authentication",
+      "Finally understood the pain and beauty of full-stack development 🥲"
+    ],
+    date: "15.6.2024",
+    repo: "https://github.com/Krejzy23/Image-Ai",
+    live: "https://image-ai-nu.vercel.app/",
+  },
+  {
+    id: "6",
+    version: "v3.5.0",
+    tech: "Three.js + Framer Motion + GSAP",
+    description: [
+      "Working with 3D models, animations, and real spatial positioning",
+      "Making websites feel alive is insanely fun"
+    ],
+    date: "20.11 2024",
+    repo: "https://github.com/Krejzy23/Developer_portfolio",
+    live: "https://developer-portfolio-green.vercel.app",
+  },
+  {
+    id: "7",
+    version: "v4.0.0",
+    tech: "Cybersecurity · Networking · Linux",
+    description: [
+      "Shift from building applications to understanding how they can be broken",
+      "Hands-on learning via labs, CTFs and real attack scenarios on TryHackMe",
+      "Started focusing on networking, enumeration, privilege escalation and fundamentals"
+    ],
+    date: "2025",
+    extra: {
+      label: "TryHackMe profile",
+      url: "https://tryhackme.com/p/Krejzy23"
+    }
+  }
+];
+
+
 export {
   navLinks,
   navIcons,
@@ -231,6 +322,7 @@ export {
   photosLinks,
   gallery,
   mobileQuickAccess,
+  system
 };
 
 const WORK_LOCATION = {
@@ -523,3 +615,4 @@ const WINDOW_CONFIG = {
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
+

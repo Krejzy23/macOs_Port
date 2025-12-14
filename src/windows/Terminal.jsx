@@ -15,7 +15,15 @@ const Terminal = () => {
       {/* TERMINAL CONTENT */}
       <div className="flex-1 techstack overflow-y-auto">
         <p>
-          <span className="font-bold">@Ales % </span>
+          <span className="font-bold">@Ales ~ % </span>
+           whoami
+        </p>
+        <p>
+          <span className="px-10">frontend → fullstack → security
+          </span>
+        </p>
+        <p>
+          <span className="font-bold">@Ales ~ % </span>
           show tech stack
         </p>
         <div className="label">
