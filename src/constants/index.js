@@ -49,9 +49,9 @@ const dockApps = [
     canOpen: true,
   },
   {
-    id: "photos",
-    name: "Gallery", // was "Photos"
-    icon: "photos.png",
+    id: "system",
+    name: "System", // was "Photos"
+    icon: "system.png",
     canOpen: true,
   },
   {
@@ -157,52 +157,52 @@ const socials = [
   },
 ];
 
-const photosLinks = [
-  {
-    id: 1,
-    icon: "/icons/gicon1.svg",
-    title: "Library",
-  },
-  {
-    id: 2,
-    icon: "/icons/gicon2.svg",
-    title: "Memories",
-  },
-  {
-    id: 3,
-    icon: "/icons/file.svg",
-    title: "Places",
-  },
-  {
-    id: 4,
-    icon: "/icons/gicon4.svg",
-    title: "People",
-  },
-  {
-    id: 5,
-    icon: "/icons/gicon5.svg",
-    title: "Favorites",
-  },
-];
+// const photosLinks = [
+//   {
+//     id: 1,
+//     icon: "/icons/gicon1.svg",
+//     title: "Library",
+//   },
+//   {
+//     id: 2,
+//     icon: "/icons/gicon2.svg",
+//     title: "Memories",
+//   },
+//   {
+//     id: 3,
+//     icon: "/icons/file.svg",
+//     title: "Places",
+//   },
+//   {
+//     id: 4,
+//     icon: "/icons/gicon4.svg",
+//     title: "People",
+//   },
+//   {
+//     id: 5,
+//     icon: "/icons/gicon5.svg",
+//     title: "Favorites",
+//   },
+// ];
 
-const gallery = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
-];
+// const gallery = [
+//   {
+//     id: 1,
+//     img: "/images/gal1.png",
+//   },
+//   {
+//     id: 2,
+//     img: "/images/gal2.png",
+//   },
+//   {
+//     id: 3,
+//     img: "/images/gal3.png",
+//   },
+//   {
+//     id: 4,
+//     img: "/images/gal4.png",
+//   },
+// ];
 
 const mobileQuickAccess = [
   {
@@ -221,7 +221,7 @@ const mobileQuickAccess = [
   }
 ];
 
-const system = [
+const systemProp = [
   {
     id: "1",
     version: "v1.0.0",
@@ -319,10 +319,8 @@ export {
   blogPosts,
   techStack,
   socials,
-  photosLinks,
-  gallery,
   mobileQuickAccess,
-  system
+  systemProp
 };
 
 const WORK_LOCATION = {
@@ -612,6 +610,8 @@ const WINDOW_CONFIG = {
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  system: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

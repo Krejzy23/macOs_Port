@@ -6,6 +6,7 @@ import { Draggable } from "gsap/Draggable";
 import useWindowStore from "#store/window";
 import { WindowHeader } from "#components";
 
+
 const WindowWrapper = (Component, windowKey, options = {}) => {
   const { fullscreenOnMobile = false, title } = options;
 

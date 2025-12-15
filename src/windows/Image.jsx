@@ -1,4 +1,4 @@
-import { WindowControls, WindowHeader } from "#components";
+import { WindowControls } from "#components";
 import WindowWrapper from "#hoc/WindowWrapper";
 import useWindowStore from "#store/window";
 
