@@ -13,6 +13,7 @@ body {
   background-position: center;
 }
 
+
 @theme {
   --font-georama: "Georama", sans-serif;
   --font-roboto: "Roboto Mono", monospace;
@@ -31,10 +32,15 @@ body {
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
+.timeline-container {
+  max-height: calc(100vh - 80px); /* odečíst header apod. */
+}
+
 @layer base {
   main {
     @apply w-dvw h-dvh overflow-hidden;
   }
+
 
   nav {
     @apply flex justify-between items-center bg-white p-2 px-5 select-none z-100;
@@ -164,7 +170,7 @@ body {
   }
 
   #terminal {
-    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-visible;
+    @apply bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
     @apply md:w-xl md:absolute md:top-32 md:left-1/12;
 
@@ -176,11 +182,11 @@ body {
       @apply text-sm font-roboto p-5;
 
       .label {
-        @apply flex items-center ms-10 mt-7;
+        @apply hidden md:flex items-center ms-10 mt-7;
       }
 
       .content {
-        @apply py-5 my-5 border-y border-dashed space-y-1;
+        @apply py-5 my-5 md:border-y md:border-dashed space-y-4;
 
         li {
           .check {
@@ -188,11 +194,11 @@ body {
           }
 
           h3 {
-            @apply font-semibold text-[#00A154] w-32 ms-5;
+            @apply font-semibold text-[#00A154] md:w-32 md:ms-5;
           }
 
           ul {
-            @apply flex items-center gap-3;
+            @apply flex flex-col gap-1 md:flex-row md:items-center md:gap-3;
           }
         }
       }

@@ -304,11 +304,8 @@ const systemProp = [
       "Started focusing on networking, enumeration, privilege escalation and fundamentals"
     ],
     date: "2025",
-    extra: {
-      label: "TryHackMe profile",
-      url: "https://tryhackme.com/p/Krejzy23"
-    }
-  }
+    repo: "https://tryhackme.com/p/Krejzy23"
+    },
 ];
 
 
