@@ -97,6 +97,7 @@ const Finder = () => {
       {/* DESKTOP HEADER */}
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="finder" />
+        <h2 className="flex-1 mr-14 text-center text-sm font-bold text-gray-600">Finder</h2>
         <Search className="icon" />
       </div>
 

@@ -114,7 +114,7 @@ const techStack = [
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express", "NestJS"],
   },
   {
     category: "Database",
@@ -132,77 +132,30 @@ const socials = [
     text: "Github",
     icon: "/icons/github.svg",
     bg: "#f4656b",
-    link: "https://github.com/JavaScript-Mastery-Pro",
+    link: "https://github.com/Krejzy23",
   },
   {
     id: 2,
     text: "Platform",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
-    link: "https://jsmastery.com/",
+    link: "https://minimalist-portfolio-navy.vercel.app/",
   },
   {
     id: 3,
     text: "Twitter/X",
     icon: "/icons/twitter.svg",
     bg: "#ff866b",
-    link: "https://x.com/jsmasterypro",
+    link: "https://x.com/",
   },
   {
     id: 4,
     text: "LinkedIn",
     icon: "/icons/linkedin.svg",
     bg: "#05b6f6",
-    link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+    link: "https://www.linkedin.com",
   },
 ];
-
-// const photosLinks = [
-//   {
-//     id: 1,
-//     icon: "/icons/gicon1.svg",
-//     title: "Library",
-//   },
-//   {
-//     id: 2,
-//     icon: "/icons/gicon2.svg",
-//     title: "Memories",
-//   },
-//   {
-//     id: 3,
-//     icon: "/icons/file.svg",
-//     title: "Places",
-//   },
-//   {
-//     id: 4,
-//     icon: "/icons/gicon4.svg",
-//     title: "People",
-//   },
-//   {
-//     id: 5,
-//     icon: "/icons/gicon5.svg",
-//     title: "Favorites",
-//   },
-// ];
-
-// const gallery = [
-//   {
-//     id: 1,
-//     img: "/images/gal1.png",
-//   },
-//   {
-//     id: 2,
-//     img: "/images/gal2.png",
-//   },
-//   {
-//     id: 3,
-//     img: "/images/gal3.png",
-//   },
-//   {
-//     id: 4,
-//     img: "/images/gal4.png",
-//   },
-// ];
 
 const mobileQuickAccess = [
   {
@@ -210,7 +163,7 @@ const mobileQuickAccess = [
     name: "Resume",
     icon: "/images/pages.png",
     windowKey: "resume",
-    windowPosition:"top-[5vh] left-30"
+    windowPosition: "top-[5vh] left-30",
   },
   {
     id: "terminal",
@@ -218,7 +171,7 @@ const mobileQuickAccess = [
     icon: "/images/terminal.png",
     windowKey: "terminal",
     windowPosition: "top-[5vh] left-5",
-  }
+  },
 ];
 
 const systemProp = [
@@ -228,7 +181,7 @@ const systemProp = [
     tech: "HTML + CSS",
     description: [
       "First contact with programming after a retraining course",
-      "Struggling with flexbox and mobile responsiveness 😀"
+      "Struggling with flexbox and mobile responsiveness 😀",
     ],
     date: "23.9.2023",
     repo: "https://github.com/Krejzy23/Photographer_portfolio",
@@ -240,7 +193,7 @@ const systemProp = [
     tech: "HTML + CSS + JavaScript",
     description: [
       "Simple website using jQuery and a form written in JavaScript",
-      "Started to feel like a real programmer — still fighting flexbox 😅"
+      "Started to feel like a real programmer — still fighting flexbox 😅",
     ],
     date: "10.11.2023",
     repo: "https://github.com/Krejzy23/Barber_Portfolio",
@@ -252,7 +205,7 @@ const systemProp = [
     tech: "React + Tailwind CSS + Framer Motion",
     description: [
       "Learning React fundamentals, dependencies, and basic UI/UX principles",
-      "Why did I waste time with vanilla coding? React is awesome! 🤩"
+      "Why did I waste time with vanilla coding? React is awesome! 🤩",
     ],
     date: "13.1.2024",
     repo: "https://github.com/Krejzy23/KrejzyVerse",
@@ -260,39 +213,39 @@ const systemProp = [
   },
   {
     id: "4",
-    version: "v2.5.0",
-    tech: "Next.js + TypeScript + API",
+    version: "v3.5.0",
+    tech: "React + Tailwind CSS + Three.js",
     description: [
-      "First experience with APIs, server-side rendering, and TypeScript",
-      "Understanding why types and data flow really matter"
+      "Working with 3D models, animations, and real spatial positioning",
+      "Making websites feel alive is insanely fun",
     ],
-    date: "14.2.2024",
-    repo: "https://github.com/Krejzy23/Anime_List",
-    live: "https://anime-list-beige.vercel.app/",
+    date: "20.11 2024",
+    repo: "https://github.com/Krejzy23/3D-Sushi-Ramen",
+    live: "https://3-d-sushi-ramen-bistro.vercel.app/",
   },
   {
     id: "5",
     version: "v3.0.0",
-    tech: "Next.js + MongoDB + Clerk",
+    tech: "React + Redux + Tailwind CSS",
     description: [
-      "First real full-stack application with database and authentication",
-      "Finally understood the pain and beauty of full-stack development 🥲"
+      "Full-stack React application built with Vite, Redux Toolkit and Tailwind CSS",
+      "Finally understood the pain and beauty of full-stack development 🥲",
     ],
     date: "15.6.2024",
-    repo: "https://github.com/Krejzy23/Image-Ai",
-    live: "https://image-ai-nu.vercel.app/",
+    repo: "https://github.com/Krejzy23/Summarizer_Ai",
+    live: "https://summarizer-ai-psi.vercel.app/",
   },
   {
     id: "6",
-    version: "v3.5.0",
-    tech: "Three.js + Framer Motion + GSAP",
+    version: "v2.5.0",
+    tech: "Next.js + TypeScript + API",
     description: [
-      "Working with 3D models, animations, and real spatial positioning",
-      "Making websites feel alive is insanely fun"
+      "First project built with TypeScript and the Next.js framework",
+      "Realized why type safety and structured data flow matter",
     ],
-    date: "20.11 2024",
-    repo: "https://github.com/Krejzy23/Developer_portfolio",
-    live: "https://developer-portfolio-green.vercel.app",
+    date: "14.2.2024",
+    repo: "https://github.com/Krejzy23/Anime_List",
+    live: "https://anime-list-beige.vercel.app/",
   },
   {
     id: "7",
@@ -301,13 +254,12 @@ const systemProp = [
     description: [
       "Shift from building applications to understanding how they can be broken",
       "Hands-on learning via labs, CTFs and real attack scenarios on TryHackMe",
-      "Started focusing on networking, enumeration, privilege escalation and fundamentals"
+      "Started focusing on networking, enumeration, privilege escalation and fundamentals",
     ],
     date: "2025",
-    repo: "https://tryhackme.com/p/Krejzy23"
-    },
+    repo: "https://tryhackme.com/p/Krejzy23",
+  },
 ];
-
 
 export {
   navLinks,
@@ -317,7 +269,7 @@ export {
   techStack,
   socials,
   mobileQuickAccess,
-  systemProp
+  systemProp,
 };
 
 const WORK_LOCATION = {
@@ -330,7 +282,7 @@ const WORK_LOCATION = {
     // ▶ Project 1
     {
       id: 5,
-      name: "Nike Ecommerce Website Application",
+      name: "Personal Photography Services",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
@@ -338,35 +290,33 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "Nike Project.txt",
+          name: "photo.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
-            "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
-            "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
-            "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+            "This private photographer’s website was created to differentiate itself from traditional portfolios through a distinctive design and minimalist approach. Attention to detail plays a key role, while carefully crafted animations bring the website to life. Lively video elements and subtle, natural animations enhance the visual experience and create a memorable “wow” effect.",
+            "The website was developed using Next.js and Tailwind CSS, with Framer Motion used for animations. It is a frontend-only project, and further development is ongoing.",
           ],
         },
         {
           id: 2,
-          name: "nike.com",
+          name: "photo.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/fZdTYswuZjU?si=Awjl-pIst9e09_UU",
+          href: "https://photo-sand.vercel.app/",
           position: "top-10 right-20",
         },
         {
           id: 4,
-          name: "nike.png",
+          name: "photo.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/project-1.png",
+          imageUrl: "/images/photo.png",
         },
         {
           id: 5,
@@ -383,7 +333,7 @@ const WORK_LOCATION = {
     // ▶ Project 2
     {
       id: 6,
-      name: "AI Resume Analyzer",
+      name: "AI SaaS Image Editing",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-52 right-80",
@@ -391,35 +341,33 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "AI Resume Analyzer Project.txt",
+          name: "Image-Ai.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 right-10",
           description: [
-            "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
-            "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
-            "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
-            "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+            "A scalable AI image SaaS platform built for advanced image processing, offering secure payment integration, intelligent image search, and multiple AI-powered features such as image restoration, recoloring, object removal, generative filling, and background removal.",
+            "The application was built using Next.js and styled with Tailwind CSS. User authentication is handled by Clerk, payments are processed via Stripe, and the database is connected to MongoDB.",
           ],
         },
         {
           id: 2,
-          name: "ai-resume-analyzer.com",
+          name: "image-ai.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/iYOz165wGkQ?si=R1hs8Legl200m0Cl",
+          href: "https://image-ai-nu.vercel.app/",
           position: "top-20 left-20",
         },
         {
           id: 4,
-          name: "ai-resume-analyzer.png",
+          name: "image-ai.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
           position: "top-52 left-80",
-          imageUrl: "/images/project-2.png",
+          imageUrl: "/images/image-ai.png",
         },
         {
           id: 5,
@@ -487,7 +435,6 @@ const WORK_LOCATION = {
     },
   ],
 };
-
 
 const ABOUT_LOCATION = {
   id: 2,
@@ -603,13 +550,10 @@ const WINDOW_CONFIG = {
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   system: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
-

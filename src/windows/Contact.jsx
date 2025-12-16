@@ -8,6 +8,7 @@ const Contact = () => {
       {/* === UNIVERSAL HEADER (mobile + desktop) === */}
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="contact" />
+        <h2 className="flex-1 mr-14 text-center text-sm font-bold text-gray-600">Contact</h2>
       </div>
 
       {/* === CONTENT === */}

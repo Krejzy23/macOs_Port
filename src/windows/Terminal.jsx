@@ -9,7 +9,7 @@ const Terminal = () => {
       {/* DESKTOP HEADER */}
       <div id="window-header" className="hidden md:flex">
         <WindowControls target="terminal" />
-        <h2>Tech stack</h2>
+        <h2 className="flex-1 mr-14 text-center text-sm font-bold text-gray-600">Terminal</h2>
       </div>
 
       {/* TERMINAL CONTENT */}
