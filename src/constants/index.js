@@ -77,25 +77,25 @@ const dockApps = [
 const blogPosts = [
   {
     id: 1,
-    date: "Sep 2, 2025",
+    date: "Dec 21, 2025",
     title:
-      "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
+      "TypeScript",
     image: "/images/blog1.png",
-    link: "https://jsmastery.com/blog/typescript-explained-what-it-is-why-it-matters-and-how-to-master-it",
+    link: "https://m-e-r-n-blog.onrender.com/post/typescript",
   },
   {
     id: 2,
     date: "Aug 28, 2025",
-    title: "The Ultimate Guide to Mastering Three.js for 3D Development",
-    image: "/images/blog2.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-three-js-for-3d-development",
+    title: "T-Shark Cybersecurity instrument",
+    image: "/images/wireshark.svg",
+    link: "https://m-e-r-n-blog.onrender.com/post/t-shark",
   },
   {
     id: 3,
-    date: "Aug 15, 2025",
-    title: "The Ultimate Guide to Mastering GSAP Animations",
-    image: "/images/blog3.png",
-    link: "https://jsmastery.com/blog/the-ultimate-guide-to-mastering-gsap-animations",
+    date: "Dec 21, 2025",
+    title: "Graphene operation system description",
+    image: "/images/GrapheneOS.svg",
+    link: "https://m-e-r-n-blog.onrender.com/post/grapheneos",
   },
 ];
 
@@ -384,7 +384,7 @@ const WORK_LOCATION = {
     // ▶ Project 3
     {
       id: 7,
-      name: "Food Delivery App",
+      name: "M.E.R.N blog",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-80",
@@ -392,30 +392,29 @@ const WORK_LOCATION = {
       children: [
         {
           id: 1,
-          name: "Food Delivery App Project.txt",
+          name: "MERN_blog.txt",
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-            "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
-            "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
-            "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
-            "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design.",
+            "A developer-focused blogging platform built as a digital lab for cybersecurity research, system exploration, and full-stack experimentation",
+
+            "The platform combines a terminal-driven visual identity with modern web technologies to deliver structured technical content and interactive experiences.Developed using React, Tailwind CSS, and a MERN architecture, with an emphasis on modular design, scalability, and maintainability.",
           ],
         },
         {
           id: 2,
-          name: "food-delivery-app.com",
+          name: "mern_blog.com",
           icon: "/images/safari.png",
           kind: "file",
           fileType: "url",
-          href: "https://youtu.be/LKrX390fJMw?si=cExkuVhf2DTV9G2-",
+          href: "https://m-e-r-n-blog.onrender.com/",
           position: "top-10 right-20",
         },
         {
           id: 4,
-          name: "food-delivery-app.png",
+          name: "mern_blog.png",
           icon: "/images/image.png",
           kind: "file",
           fileType: "img",
