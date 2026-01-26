@@ -138,7 +138,7 @@ const socials = [
     id: 2,
     text: "Platform",
     icon: "/icons/atom.svg",
-    bg: "#4bcb63",
+    bg: "#05b6f6",
     link: "https://minimalist-portfolio-navy.vercel.app/",
   },
   {
@@ -150,10 +150,10 @@ const socials = [
   },
   {
     id: 4,
-    text: "LinkedIn",
-    icon: "/icons/linkedin.svg",
-    bg: "#05b6f6",
-    link: "https://www.linkedin.com",
+    text: "WhatsApp",
+    icon: "/icons/whatsapp.svg",
+    bg: "#4bcb63",
+    link: "https://www.whatsapp.com",
   },
 ];
 
@@ -286,7 +286,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[5vh] left-5", // optional: Finder window position
+      windowPosition: "top-10 left-5", // optional: Finder window position
       children: [
         {
           id: 1,
@@ -316,7 +316,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/photo.png",
+          imageUrl: "/images/photo.webp",
         },
         {
           id: 5,
@@ -336,8 +336,8 @@ const WORK_LOCATION = {
       name: "AI SaaS Image Editing",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-52 right-80",
-      windowPosition: "top-[20vh] left-7",
+      position: "top-40 right-95",
+      windowPosition: "top-40 left-10",
       children: [
         {
           id: 1,
@@ -345,7 +345,7 @@ const WORK_LOCATION = {
           icon: "/images/txt.png",
           kind: "file",
           fileType: "txt",
-          position: "top-5 right-10",
+          position: "top-5 right-65",
           description: [
             "A scalable AI image SaaS platform built for advanced image processing, offering secure payment integration, intelligent image search, and multiple AI-powered features such as image restoration, recoloring, object removal, generative filling, and background removal.",
             "The application was built using Next.js and styled with Tailwind CSS. User authentication is handled by Clerk, payments are processed via Stripe, and the database is connected to MongoDB.",
@@ -367,7 +367,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-52 left-80",
-          imageUrl: "/images/image-ai.png",
+          imageUrl: "/images/image-ai.webp",
         },
         {
           id: 5,
@@ -387,8 +387,8 @@ const WORK_LOCATION = {
       name: "M.E.R.N blog",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-80",
-      windowPosition: "top-[33vh] left-7",
+      position: "top-20 left-80",
+      windowPosition: "top-63 left-47",
       children: [
         {
           id: 1,
@@ -419,7 +419,7 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "img",
           position: "top-52 right-80",
-          imageUrl: "/images/project-3.png",
+          imageUrl: "/images/mern.webp",
         },
         {
           id: 5,
@@ -428,6 +428,57 @@ const WORK_LOCATION = {
           kind: "file",
           fileType: "fig",
           href: "https://google.com",
+          position: "top-60 right-20",
+        },
+      ],
+    },
+    // ▶ Project 4
+    {
+      id: 8,
+      name: "Steakhouse",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-5 left-35",
+      windowPosition: "top-25 left-45",
+      children: [
+        {
+          id: 1,
+          name: "steak_restaurant.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-10",
+          description: [
+            "This restaurant website was designed with a clean, premium aesthetic and a strong focus on user experience and visual detail. Subtle animations, smooth transitions, and carefully crafted UI elements create a polished and modern feel without distracting from the content.",
+
+            "The project was built using React and Tailwind CSS, with GSAP for animations. It is a fully responsive, frontend-focused project that emphasizes component-based architecture, performance, and design consistency.",
+          ],
+        },
+        {
+          id: 2,
+          name: "steakhouse.com",
+          icon: "/images/safari.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://steakhouse-gold.vercel.app/",
+          position: "top-35 left-15",
+        },
+        {
+          id: 4,
+          name: "steakhouse.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-10 right-80",
+          imageUrl: "/images/steakhouse.webp",
+        },
+        {
+          id: 5,
+          name: "Design.fig",
+          icon: "/images/plain.png",
+          kind: "file",
+          fileType: "fig",
+          href: "https://figma.com",
           position: "top-60 right-20",
         },
       ],
@@ -444,33 +495,6 @@ const ABOUT_LOCATION = {
   children: [
     {
       id: 1,
-      name: "me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
-    },
-    {
-      id: 2,
-      name: "casual-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-28 right-72",
-      imageUrl: "/images/adrian-2.jpg",
-    },
-    {
-      id: 3,
-      name: "conference-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-52 left-80",
-      imageUrl: "/images/adrian-3.jpeg",
-    },
-    {
-      id: 4,
       name: "about-me.txt",
       icon: "/images/txt.png",
       kind: "file",
