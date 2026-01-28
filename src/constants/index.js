@@ -501,12 +501,13 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "",
       description: [
-        "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
-        "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
-        "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
-        "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅",
+"Hey! I’m Aleš 👋, a front-end developer based in Prague. After over 10 years in technical fields, I now craft modern, interactive web applications with React, JavaScript, and Next.js. I love building interfaces that are not just functional, but smooth, intuitive, and a little delightful to use.",
+
+"I’m all about clean UI, solid UX, and writing code that’s precise, maintainable, and doesn’t need a search party to debug. My experience ranges from creating multi-page SPAs and responsive layouts to integrating APIs and managing state with React Hooks.",
+
+"When I’m not coding, you’ll probably find me tweaking layouts at 2AM, experimenting with animations, or convincing myself I needed yet another gadget 😅.",
       ],
     },
   ],
